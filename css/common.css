@@ -1,0 +1,316 @@
+@charset "utf-8";
+
+/* --------------------------------------------------------------------------
+
+Primary && Common
+
+-------------------------------------------------------------------------- */
+
+html,
+body,
+.wrapper {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	font-family: "Microsoft YaHei", SimSun, "\5B8B\4F53", SimHei, sans-serif;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+/* The setting of header
+================================================== */
+
+.header {
+	height: 170px;
+	background-color: #fff;
+}
+
+/*
+ * Logo
+ */
+
+.logo {
+	position: relative;
+	top: 50%;
+	float: left;
+	width: 150px;
+	height: 104px;
+	margin: -52px 0 0 6.78%;
+}
+
+.logo a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url(../img/logo.png) 0 0 no-repeat;
+	background-size: cover;
+}
+
+/*
+ * Navigation Bar
+ */
+
+.nav {
+	float: left;
+	height: 100%;
+	padding-top: 40px;
+	font-family: KaiTi;
+	font-size: 16px;
+	text-align: center;
+}
+
+.nav li {
+	float: left;
+	margin-right: 20px;
+	line-height: 1.2;
+}
+
+.nav li:last-of-type {
+	margin-right: 0;
+}
+
+.nav li.active {
+	color: #d4181a;
+}
+
+.nav li a {
+	display: inline-block;
+	width: 20px; /* 使文字竖排 */
+	-webkit-transition: color .3s;
+			transition: color .3s;
+}
+
+.nav li a:hover {
+	color: #d4181a;
+}
+
+/* 二级页面点开式导航 */
+
+.page-sub .nav-main {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	display: table;
+	width: 100%;
+	padding: 0;
+	padding: 0 30%; /* 控制PC端标签间距 */
+	margin-left: 0;
+	font-size: .24rem;
+	background-color: #fff;
+	text-align: center;
+	opacity: .9;
+	-webkit-transform: translateY(-100%);
+			transform: translateY(-100%);
+	-webkit-transition: -webkit-transform 1s;
+			transition: transform 1s;
+}
+
+.page-sub .nav-main.open-nav {
+	-webkit-transform: translateY(0%);
+			transform: translateY(0%);
+}
+
+.page-sub .nav-main .navitem {
+	display: table-cell;
+	vertical-align: middle;
+	opacity: 0;
+	-webkit-transition: opacity 1s;
+			transition: opacity 1s;
+}
+
+.page-sub .nav-main li {
+	width: 33.33%;
+	margin: 15% 0;
+}
+
+.page-sub .nav-main li a {
+	width: 24px; /* 和文字大小有关 */
+	padding-top: 20px;
+	border-top: 2px solid #ccc;
+}
+
+.page-sub .nav-sub {
+	margin-left: 50px;
+}
+
+.page-sub .nav-toggle {
+	position: relative;/* 让按钮同菜单在一个层级 */
+	top: 0;
+	left: 0;
+	z-index: 101;
+	float: left;
+	margin: 34px 0 0 7.45%;
+	opacity: 1;
+}
+
+/* 
+ * Back Button
+ */
+
+.back {
+	float: left;
+	height: 100%;
+	width: 20px;
+	padding-top: 40px;
+	margin-left: 50px;
+	font-family: KaiTi;
+	font-size: 18px;
+	line-height: 1.2;
+}
+
+.back a:hover {
+	color: #d4181a;
+	-webkit-transition: color 0.3s;
+			transition: color 0.3s;
+}
+
+/*
+ * Chinese-English shift
+ */
+
+.lang {
+	float: left;
+	width: 20px; /* 此处不能设置为内部a的宽度，兼容safari */
+	height: 170px;
+	padding-top: 40px;
+	margin-left: 20px;
+	font-family: KaiTi;
+	font-size: .16rem;
+	text-align: center;
+	position: relative;
+}
+
+.lang a {
+	display: none;
+	line-height: 1.2;
+	-webkit-transition: color .3s;
+			transition: color .3s;
+}
+
+.lang a:hover {
+	color: #d4181a;
+}
+
+.lang a.on {
+	display: block;
+}
+
+.lang .lang-en {
+	-webkit-writing-mode: vertical-lr;
+			writing-mode: vertical-lr;
+			writing-mode: tb-lr;
+/*Safari下不兼容*/
+	font-size: .15rem;
+	letter-spacing: 1px;
+	text-indent: 2px;
+	color: #333333;
+/*safari居中问题*/
+	position: absolute; 
+	top: 40px;
+	left: 0;
+}
+
+/*
+ * Search Button
+ */
+
+.search {
+	float: left;
+	height: 100%;
+	padding-top: 40px;
+	margin-left: 20px;
+}
+
+.search .icon-search {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background: url(../img/icon/icon-search-default.svg) 0 0 no-repeat;
+	background-size: cover;
+	-webkit-transition: background-image .3s;
+			transition: background-image .3s;
+}
+
+.search a:hover {
+	background-image: url(../img/icon/icon-search-hover.svg);
+}
+
+/*
+ * Share Button
+ */
+
+.share {
+	float: right;
+	height: 100%;
+	padding-top: 34px;
+	margin-right:  6.78%;
+}
+
+.share a {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin-right: 20px;
+}
+
+.share a.icon-moments {
+	position: relative;
+	top: -4px;
+	width: 25px;
+	height: 25px;
+}
+
+.share .icon-wechat {
+	background: url(../img/icon/icon-wechat-gray.svg) center no-repeat;
+	background-size: cover;
+}
+
+.share .icon-moments {
+	background: url(../img/icon/icon-moments-gray.svg) center no-repeat;
+	background-size: cover;
+}
+
+/* The setting of main content
+================================================== */
+
+section.main {
+	width: 100%;
+	height: 100%;
+}
+
+/* 视频背景--About && Condition页面 */
+
+.main .video-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	opacity: 0.1;
+	/*如果不支持该视频，显示该背景图*/
+	/*background: url(../img/novideo.jpg) center no-repeat;
+	background-size: cover;*/
+}
+
+.main .video-wrap video {
+	min-width: 100%;
+	min-height: 100%;
+}
+
+/* 手机端二级页面头部标题 */
+.page-title {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 70px;
+	font-size: .16rem;
+	font-family: KaiTi;
+	opacity: 0;
+	-webkit-transition: opacity .5s 1.3s;
+			transition: opacity .5s 1.3s;
+}
